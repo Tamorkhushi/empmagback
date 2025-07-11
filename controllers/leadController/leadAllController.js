@@ -90,9 +90,11 @@ export const createMyLead = async (req, res) => {
 
     // ✅ req.file comes from multer
     const avatar = req.file ? `/uploads/${req.file.filename}` : null;
+    console.log("File uploaded:", req.file?.filename);
+
 
     // ✅ required field check (include avatar here)
-    if (!name || !email || !phoneNumber || !status || !avatar) {
+    if (!name || !email || !phoneNumber || !status ) {
       return res.status(400).json({
         success: false,
         message: 'All fields are required',
