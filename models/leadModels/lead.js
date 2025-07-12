@@ -7,7 +7,8 @@ const leadSchema = new Schema({
   email: { type: String, required: true, unique: true },
   status: { type: String, enum: ['New', 'Contacted', 'Closed'], default: 'New' },
   phoneNumber: { type: String, required: true, unique: true },
-  avatar: { type: String }, 
+  imgpath: { type: String }, 
+  date:{ type:Date },
   
 },{ timestamps: true });
 

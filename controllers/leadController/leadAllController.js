@@ -2,6 +2,8 @@ import { StatusCodes } from "http-status-codes";
 import leadModel from "../../models/leadModels/lead.js";
 import { leadSchemavalidate } from "../../schema_validation/leadValidation/leadValidate.js";
 import path from 'path'
+import moment from "moment/moment.js";
+
 
 //  get own leads for perticular user
 export const getMyLeads = async (req, res) => {
@@ -80,21 +82,25 @@ export const getMyLeads = async (req, res) => {
 //   }
 // };
 
+
+
 // ...................................................newcode
 export const createMyLead = async (req, res) => {
   try {
     // ✅ req.body comes from multer for multipart/form-data
+   const {filename} = req.file
+
     const { name, email, phoneNumber, status } = req.body;
     console.log(req.body)
     console.log(res)
 
+    const date = moment(new Date()).format('YYYY-MM-DD')
     // ✅ req.file comes from multer
-    const avatar = req.file ? `/uploads/${req.file.filename}` : null;
-    console.log("File uploaded:", req.file?.filename);
+   
 
 
     // ✅ required field check (include avatar here)
-    if (!name || !email || !phoneNumber || !status ) {
+    if (!name || !email || !phoneNumber || !status || !filename  ) {
       return res.status(400).json({
         success: false,
         message: 'All fields are required',
@@ -131,7 +137,8 @@ export const createMyLead = async (req, res) => {
       email,
       phoneNumber,
       status: status || 'New',
-      avatar,
+      imgpath:filename,
+      date:date,
       userId: req.userId,
     });
 
