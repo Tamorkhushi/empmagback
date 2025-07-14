@@ -3844,3 +3844,15 @@
 [2025-02-09T11:03:04.433Z] INFO: Token verification starts
 [2025-02-09T11:03:04.434Z] INFO: token validator starts in jwtVerifyToken. 
 [2025-02-09T11:03:04.436Z] INFO: Token verification ended.
+[2025-07-14T09:33:07.262Z] INFO: Token verification starts
+[2025-07-14T09:33:07.282Z] INFO: token validator starts in jwtVerifyToken. 
+[2025-07-14T09:33:07.283Z] ERROR: Exception occurred at validation function JsonWebTokenError: jwt malformed
+[2025-07-14T09:33:07.284Z] ERROR: Token verification error Error: Token validator failed
+[2025-07-14T09:38:00.699Z] INFO: Token verification starts
+[2025-07-14T09:38:00.707Z] INFO: token validator starts in jwtVerifyToken. 
+[2025-07-14T09:38:00.723Z] ERROR: Exception occurred at validation function JsonWebTokenError: jwt malformed
+[2025-07-14T09:38:00.729Z] ERROR: Token verification error Error: Token validator failed
+[2025-07-14T09:47:04.454Z] INFO: Token verification starts
+[2025-07-14T09:47:04.458Z] INFO: token validator starts in jwtVerifyToken. 
+[2025-07-14T09:47:04.461Z] ERROR: Exception occurred at validation function JsonWebTokenError: jwt malformed
+[2025-07-14T09:47:04.462Z] ERROR: Token verification error Error: Token validator failed

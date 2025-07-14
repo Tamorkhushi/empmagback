@@ -88,11 +88,10 @@ export const getMyLeads = async (req, res) => {
 export const createMyLead = async (req, res) => {
   try {
     // ✅ req.body comes from multer for multipart/form-data
-   const {filename} = req.file
+   const {filename} = req.file || {}
 
     const { name, email, phoneNumber, status } = req.body;
     console.log(req.body)
-    console.log(res)
 
     const date = moment(new Date()).format('YYYY-MM-DD')
     // ✅ req.file comes from multer
