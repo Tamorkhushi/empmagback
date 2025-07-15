@@ -93,7 +93,7 @@ export const createMyLead = async (req, res) => {
     const { name, email, phoneNumber, status } = req.body;
     console.log(req.body)
 
-    const date = moment(new Date()).format('YYYY-MM-DD')
+    // const date = moment(new Date()).format('YYYY-MM-DD')
     // ✅ req.file comes from multer
    
 
@@ -136,8 +136,7 @@ export const createMyLead = async (req, res) => {
       email,
       phoneNumber,
       status: status || 'New',
-      imgpath:filename,
-      date:date,
+      avatar:filename,
       userId: req.userId,
     });
 

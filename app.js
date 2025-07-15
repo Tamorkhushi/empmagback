@@ -55,20 +55,24 @@ const app = express();
 // Middleware
 // app.use(cors(corsOptions));  // for specific frontend url
 app.use(cors());                // for all frontend url
-
 app.use(helmet());
 app.use(express.json());
 
-// Connect to Database
-Db_Connection()
-
-// Routes
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use('/api/users', mainRoute);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+
+
+// Connect to Database
+Db_Connection()
+
+// Routes
+
+
 
 
 // Start Server
